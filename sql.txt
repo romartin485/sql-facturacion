@@ -1,0 +1,15 @@
+1-SELECT * FROM clientes a INNER JOIN ventas b on a.id_cliente=b.id_cliente 
+WHERE b.id_tipo_vta=2 
+
+2-SELECT nom_cliente FROM clientes a INNER JOIN ventas b on a.id_cliente=b.id_cliente 
+INNER JOIN tipo_venta c on c.id_tipo_vta=b.id_tipo_vta 
+WHERE c.id_tipo_vta=2 and b.fec_venta BETWEEN '2016-01-01' AND '2016-12-31' 
+
+3-SELECT * FROM productos a INNER JOIN detalle_ventas b on a.id_producto=b.id_producto 
+INNER JOIN ventas c on c.id_venta=b.id_venta WHERE c.id_tipo_vta=2 
+
+4-SELECT * FROM ventas a INNER JOIN detalle_ventas b on a.id_venta=b.id_venta 
+WHERE fec_venta BETWEEN '2016-01-01' AND '2016-12-31' 
+
+5-SELECT nom_producto FROM proveedores a INNER JOIN 
+productos b on a.id_proveedor=b.id_proveedor WHERE b.id_proveedor=2 
